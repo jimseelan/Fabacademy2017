@@ -61,7 +61,7 @@
           <ul class="nav navbar-nav">
             <li><a href="about.html">About</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Assignments <span class="caret"></span></a>
               <ul id="exercises" class="dropdown-menu" role="menu">
               </ul>
             </li>
@@ -80,144 +80,48 @@
 
 	<!-- Insert your content here below! -->
 
-     <!-- WORK IN PROGRESS BANNER --> 
-    <p> <img src="\images\inprogress.jpg">
-	<legend>This site is yet to be completed, please visit later.</legend>
-	</p>
-    <!-- WORK IN PROGRESS BANNER --> 
-        
-        
-    <h2>Final Project...</h1>
-    
-    <h3>Menu</h3>
-	<p>
-	You can edit it by changing the <em>exercises-menu.html</em> and <em>project-menu.html</em>. Do <strong>not</strong> add any &ltol&gt; or &ltul&gt;, leave the structure as it is.
-	</p>
-    
-    
-    <h3>Text</h3>
-	<p>
-	You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltp&gt;
-	Your text here
-	&lt/p&gt;</pre>
-	</p>
-	Result:
-	<p>
-	Your text here
-	</p>
-	
-	<h3>Images</h3>
-	<p>
-	You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltp class="pic&gt;>&ltimg src="http://academy.cba.mit.edu/2012/students/menichinelli.massimo/exercise07/exercise07_02.jpg"&gt;
-	&ltlegend&gt;Here's the legend of the picture.&lt/legend&gt;
-	&lt/p&gt;</pre>
-	</p>
-	Result:
-	<p class="pic"><img src="http://academy.cba.mit.edu/2012/students/menichinelli.massimo/exercise07/exercise07_02.jpg">
-	<legend>Here's the legend of the picture.</legend>
-	</p>
-     
-	<h3>Code</h3>
-	<p>
-	You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltpre class="prettyprint linenums"&gt;
-	Your code here
-	&lt/pre&gt;</pre>
-	
-	Result:
-	<pre class="prettyprint linenums">
-	for i in members:
-		print ""
-		print "USER:",members[i]
-		print "Loading connections..."
-		followers = load_connections([i], "followers")
-		friends = load_connections([i], "friends")
 
-		# Add edges...
-		print "Building the graph..."
-
-		for f in followers:
-			for k in followers[f]:
-				graph.add_edge(k,f)
-	
-		for f in friends:
-			for k in friends[f]:
-				graph.add_edge(f,k)</pre>
-	</p>
-	
-	<h3>3D Model</h3>
-	<p>	
-	The model can be rotated and zoomed with the mouse/trackpad. You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltcanvas id="cv" width=640 height=480&gt;
-	It seems you are using an outdated browser that does not support canvas :-(
-	&lt/canvas&gt;
-	&ltscript type="text/javascript"&gt;
-		var canvas = document.getElementById('cv');
-		var viewer = new JSC3D.Viewer(canvas);
-		viewer.setParameter('SceneUrl','media/monkey.stl');
-		viewer.setParameter('ModelColor','#CAA618');
-		viewer.setParameter('BackgroundColor1','#E5D7BA');
-		viewer.setParameter('BackgroundColor2','#383840');
-		viewer.setParameter('RenderMode','flat');
-		viewer.setParameter('MipMapping','on');
-		viewer.setParameter('Definition','high');
-		viewer.setParameter('Renderer','webgl');
-		viewer.init();
-		viewer.update();
-	&lt/script&gt;</pre>
-	
-	You can set up the path to the 3D model (.stl/.obj) within this line:
-	<pre class="prettyprint linenums">
-	viewer.setParameter('SceneUrl','media/monkey.stl');</pre>
-	
-	Result:
-	<canvas id="cv" width=640 height=480>
-	It seems you are using an outdated browser that does not support canvas :-(
-	</canvas>
-	<script type="text/javascript">
-		var canvas = document.getElementById('cv');
-		var viewer = new JSC3D.Viewer(canvas);
-		viewer.setParameter('SceneUrl','media/monkey.stl');
-		viewer.setParameter('ModelColor','#CAA618');
-		viewer.setParameter('BackgroundColor1','#E5D7BA');
-		viewer.setParameter('BackgroundColor2','#383840');
-		viewer.setParameter('RenderMode','flat');
-		viewer.setParameter('MipMapping','on');
-		viewer.setParameter('Definition','high');
-		viewer.setParameter('Renderer','webgl');
-		viewer.init();
-		viewer.update();
-	</script> 
-    </p> 
+        
+    <h4>Final Project > the Concept...</h4>
     
-    <h3>Download</h3>
+    <h3>3D Human Scanner</h3>
 	<p>
-	You can set up a button for files to be downloaded with:
-	<pre class="prettyprint linenums">
-	&lta href="#"&gt;
-	&ltbutton type="button" class="btn btn-primary btn-lg">Download the file&lt/button&gt;
-	&lt/a&gt;</pre>
+	I am planning to do a 3D human scanner. My plan is to make a rig that could mount a rotating camera to take multiple photos of the subject across 360-deg. Then these photos could be stictched and made into a model using a photogrammetry application. I am researching on the possibles apps and techniques and will be posting a more detail plan soon.
+
+        <hr>
 	</p>
-	
-	<p>
-	Result:
-	</p>
-	<p>
-	<a href="#">
-	<button type="button" class="btn btn-primary btn-lg">Download the file</button>
-	</a>
-	</p>
-      
-    <h3>Would you like to insert more style/elements?</h3>
-      <p>
-      Check the documentation of Bootstrap <a href="">here</a>.
-      </p>
+
+<!-- start of code snippet from bootstrap cheat sheet on hackerthemes! -->        
+<!-- Custom css that makes this example work like it does: -->
+<style type="text/css" scoped>
+.scrollspy-example {
+    position: relative;
+    height: 300px;
+    margin-top: .5rem;
+    overflow: auto;
+}
+</style>
+
+<!-- Actual scrollspy markup: -->
+<nav id="navbar-example2" class="navbar navbar-light bg-faded">
+  <h4 class="navbar-brand">Concept Scribblings </h4>
+  <ul class="nav nav-pills">
+    <li class="nav-item"><a class="nav-link" href="#scribble1">Scribble 1</a></li>
+    <li class="nav-item"><a class="nav-link" href="#scribble2">Scribble 2</a></li>
+  </ul>
+</nav>
+<div data-spy="scroll" data-target="#navbar-example2" data-offset="0" class="scrollspy-example">
+  <h4 id="scribble1">Scribble 1</h4>
+  <p>This is my first sketch on the project as part of the first weeks task. The image depicts the rotating camera fixed on a support and the subject posing in the middle.[29/01/2017] <br>
+    <img src="images/projectconcept1.jpg" alt="Photo of first sketch of final project">
+      <legend>First sketch of the project idea.[29/01/2017]</legend>
+    </p>
+   <p><hr></p>  
+  <h4 id="scribble2">Scribble 2</h4>
+  <p>I plan to add more details sketches here, please visit later.</p>
+</div>
+<!-- end of code snippet  from bootstrap cheat sheet on hackerthemes! -->  
+        
     <!-- End of your content -->
 
     </div> <!-- /container -->
@@ -241,7 +145,7 @@
     <script src="media/jquery-1.9.1.min.js"></script>
     
     <!-- Syntax Highlighter -->
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js">
     </script>
     <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
     <link href="media/github.css" type="text/css" rel="stylesheet">
