@@ -92,12 +92,63 @@
         - Sketched my Final project idea.</p>
         <hr>
         
-    <h3>Details</h3>
+    <h3>Inprogress</h3>
 	<p>
-	I will be soon putting the details here.
-	</p>
+	I will be soon putting more details here.
+        </p>
+        
+    <h3>Ubuntu and the window focus</h3>    
+	<p>Setting up Ubuntu was not very difficult, but trying to solve the anooying window not focusing issue has taken the lion share of my initial week. BTW, I am a newbie to Ubuntu, and installed it on a 5 year old Lenovo T420 which my friend loaned me for the 6 months of Fabacademy. Windows is working okay on this T420, but for some strange reasons on Ubuntu, the mouse will not click on the front window. This issue will pop in after 2mins of logon and was a real annoyance. I tried searching the various forums and tried the various solutions. Few of the things I tried out are <br>
+        </p>
+        <ul>
+        <li> Initially I thought its a mouse issue and done some search on that regard, but after few hours I could figure out that the issue was with the 'window focus'. </li>
+        <li> As mentioned <a href="http://www.webupd8.org/2015/11/fix-for-some-apps-starting-behind.html">here</a>. I Installed the compizconfig-settings-manager, and changed the "Focus Prevention Level" from 'Low' to "Off". This seemed to solve the problem on Day-1, but unfortunatly the issue came back. </li>
+            <li> Then as mentioned <a href="http://askubuntu.com/questions/697002/strange-window-focus-behavior-with-ubuntu-15-10-and-gnome">here</a>. I made the changes in Unity Tweak tool, but of no much use. </li>
+            <li> By this time I have figured that this issue sometime goes off on ots own; but returns after a few minutes. </li>
+            <li> Then via Terminal I tried <code>Unity --replace</code> which temporarily did a reset and a temporary relief. </li>
+            <li> Later I found that only <code>Unity</code> will also solve, but again momentarily only.</li>
+            <li> Later upon discussion with my peers here, I installed <a href="http://www.tecmint.com/install-cinnamon-desktop-in-ubuntu-fedora-workstations/">Cinnamon</a>. I really liked the UI, but after 2 minutes of usage the window focus issue was back there too. </li>
+    </ul>
+        
+        Unfortunately, none of the above solutions gave a permamnent fix to the issue. So I need to be get annoyed with Ubuntu till I get a new laptop. In the mean time I have managed to get the website made on windows using brackets. I then used Github to take it to Ubuntu, and then used git to push it to the fablab repository. </p>
     
+      
+        <h3>Git - Setting it up and using</h3>   
+        
+    <p>Git is used as the version control system at the Fabacademy. The first fabacademy specific activity that I have done at the fablab is setting up GIT and using it. After Neils session, our local Instructor Yadu gave us a brief on Git and about the process of using and setting it up. GIT was entirely new to me and initially I was skeptical on my capabality to understand GIT, but after learning to use it I think I am having a fair idea of it. <br>
+        I have also found an interesting simulator to try git without worrying about any wrong doings. The link of this git simulator is <a href="https://try.github.io/">here</a>  </p> 
+      <p>
+          <strong>Steps followed to setup git</strong>
+        <li>Create a fab lab account, and then create the gitlab account on <a href="http://git.fabacademy.org">git.fabacademy.org</a></li>
+        <li> Then install git by entering the following code in git. <code>sudo apt-get install git</code></li>
+        <li>Then we need to generate the ssh keys by entering the following command in terminal <code>ssh-keygen -t rsa -b 4096 -C "enter mail id"</code></li>
+        <li> The file name will be asked and enter it, or preferrably use the default location itself.</li>
+        <li>A passphrase will be asked them, and need to enter an easy to remember one.</li>
+        <li>Id_rsa is your private key and id_rsa is your public key</li>
+        <li>Then need to ensure that the ssh agent is enabled by entering eval <code>"$ (ssh-agent -s)" #ensure ssh agent is enabled</code>.</li>
+        <li>Then add the ssh key to the agent by ntering <code>ssh-add ~/.ssh/id_rsa</code></li>
+      <li>Then global user id and global email ide needs to be added. The following commands are used for adding username <code>git config --global user.name "Enter your username"</code> and the following for the email <code>git config --global user.email mail id</code> </li>
+          <li>This user name needs to be given to instructor so that he could add us as users to the class repository</li>
+          <li>Then we need to enter the public key to the gitlab account by <code>sudo gedit ~/.ssh/id_rsa.pub</code> copy the entire contents fron the gedit window and close the window.Then paste this key to git.fabacademy.org under <strong>Profile Settings >> SSH keys >> Keys. Also need to ensure that a title is given to identify the PC used. And then click add key.</strong></li>
+          <li>Then using terminal navigate to a directory, in my case I used the documennts folder. Then type the collowing to clone the repository <code>git@git.fabacademy.org:fabacademy2017/fablabtrivandrum.git</code></li>
+      </p>
+<p>
+    <strong>Commands for day-to-day use of GIT</strong><br>
+      There are lot of commands in GIT, but to achieve the basic day-to-day activities could be illustrated as in the following diagram.<br>
+            <img src="images/GITchart.gif" width="500" height=auto>
+		<legend>This chart depicts my understanding of the basic operations on GIT.</legend> <br>
+    <li><code>git status</code></li>
+    <li><code>git add -all</code></li>
+    <li><code>git commit -m "comment"</code></li>
+    <li><code>git pull</code></li>
+    <li><code>git push</code></li>
+            </p>
+		
     
+      </p>
+      
+    
+      
     <!-- End of your content -->
 
     </div> <!-- /container -->
