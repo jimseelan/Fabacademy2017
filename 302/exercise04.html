@@ -196,16 +196,25 @@
     <p>After flashing we need  to set the configuration fuses, which is done by entering <code>make fuses</code> on the terminal. This will set up all of the fuses except the one that disables the reset pin. Next we need to check the USB connectivity. This is done by typing <code>lsusb</code> in the terminal, which will list USB devices. And if we should see a "Multiple Vendors USBtiny" device, it worked correctly, and it did work for me right first time itself.</p>
     <p>Now there are two final steps left to turn your board into a programmer that can program other boards. First, we need to change the bit that will turn the ATtiny45's reset pin into a GPIO pin. Once again, this will disable our ability to reprogram this ATtiny45 in the future, which is why we wanted to make sure everything was working before doing this. Connect the ISP programmer to the board one more time, and run <code>make rstdisbl</code>. This does the same thing as the <code>make fuses</code> command, but this time it's going to include that reset disable bit as well. We should see some progress bars, and with that, avrdude will never be able to talk to this chip again through the ISP header. And it has begun its life as a programmer alone.</p>
  <p> Following are the commands and the progress messages I got on my terminal while programming my fabISP. </p>
-<p style="align:center;border:3px; border-style:none; width:500px;background-color:gray"><b>jim@jim-ThinkPad-T420:~/Downloads/fts_firmware_bdm_v1</b>
+<!---<p style="align:center;border:3px; border-style:none; width:500px;background-color:gray"><b>jim@jim-ThinkPad-T420:~/Downloads/fts_firmware_bdm_v1</b>
  <embed src="/images/week4/terminalcommands.txt" style="width:500px;height:300px;background-color:gray;border:solid black;padding:1%;font:22px/30px sans-serif;">
-    </p>
+    </p>--->        
+                <p style="align:center;border:3px; border-style:solid; width:500px;background-color:gray"><mark style="background-color: #660475;" <strong> &nbsp X &nbsp - &nbsp [ ] &nbsp&nbsp <b>jim@jim-ThinkPad-T420:~/Downloads/fts_firmware_bdm_v1</b>&nbsp</strong></mark>
+        <object tyle="align:center;border:3px; border-style:none; width:500px;background-color:#300325" data="images/week4/terminalcommands.txt" type="text/plain"
+width="500" style="height: 300px">
+<a href="images/week4/terminalcommands.txt">No Support?</a>
+</object>
+                        <p> <img src="images/week4/lsusb.png" width=60% height=auto>
+        <legend><code>lsusb</code> showing that USBtiny is detected</legend> </p> 
 <h3>Making the bus connector</h3>   
     <p>A bus connector is required to connect the headers of the fabISP to another boardfor programming. This is made by taking a 1 foot long 6-strand ribbon wire and then snapping the 2 piece connector as shown in the animation below.</p>
                 <p> <img src="images/week4/connector.gif" width=500px height=auto>
-        <legend>Making the bus Connector</legend> </p> 
+        <legend>Making female IDC ribbon connector</legend> </p> 
         
     <p>This weeks tasks were entirely new to me, evenhough I had some initial doubts on my ability to do the tasks like soldering, programming and all, I was able to complete all the tasks in time with good understanding. Thanks to the support by Yadu, Vishnu and Ajith, who enable me to be a proud owner of my first self made board, that too using surface mount parts.</p>
         <hr>
+
+        
     <!-- End of your content -->
 
     </div> <!-- /container -->
