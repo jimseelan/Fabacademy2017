@@ -80,143 +80,80 @@
 
 	<!-- Insert your content here below! -->
 
-     <!-- WORK IN PROGRESS BANNER --> 
-    <p> <img src="images/inprogress.jpg">
-	<legend>This site is yet to be completed, please visit later.</legend>
-	</p>
-    <!-- WORK IN PROGRESS BANNER -->  
+        <h1>Computer-Controlled Machining</h1> 
+        <p>This week's assignment is to make something BIG. And I designed a standing work table using solidworks and cut it on the <a href="http://www.shopbottools.com/mProducts/prSalpha.htm">Shop bot CNC</a> at our lab</p>
+        
+        <h2>The Standing Laptop table</h2>
+        
+        <p>Mine was more of a computer based job, where in I need to sit for most of the day, which adversly affected my back over a period of time. I was more careful then, and also started to explore more working postures. As a designer I initially made my own laptop stand out of packaging card board at work place itself. And this elevated the height of my laptop so that I could sit on a more upright position. I am now using this for more than a year, while I am sitting and working. I also explored some options for standing and working so that I could change my posture. For this regard I took a discarded tea table, and placed it in on top of my work desk. This setup worked but was a kind of a jugaad solution. Also I was not able to use a separate keyboard. So when the assignment of the week came, the standing laptop table topped my list.</p>
+        
+        <h3>The design</h3>
+        <p>I used Solidworks to make the design. I made the different [parts first and then assembled them to see if everything is in order.</p>
+        
+                <p>       <img src="images/week7/swanimation.gif" width=100% height=auto>
+		<legend>The final assembly created in Solidworks</legend> </p> 
+        
+        
+<div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/592dc46084364dc08c2e70a0aafc495a/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
 
-     <h2>Exercise...</h1>
+<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A; text-align: center">
+    <a href="https://sketchfab.com/models/592dc46084364dc08c2e70a0aafc495a?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Standing table for laptop</a>
+    by <a href="https://sketchfab.com/jimseelan?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">jimseelan</a>
+    on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+</p>
+    </div>
     
-    <h3>Menu</h3>
-	<p>
-	You can edit it by changing the <em>exercises-menu.html</em> and <em>project-menu.html</em>. Do <strong>not</strong> add any &ltol&gt; or &ltul&gt;, leave the structure as it is.
-	</p>
+    <h3>Making the stand</h3>
+    <p>After making the solidworks design files, I exported the dxf of each and every part. I nested the dxf using Rhino, and then exported a final DXF with all the parts inside. The cutting is given in the following order, First eengraving of the text then the edge holes and then the pocets and the inner cuts, and finally the outer profile cut.  </p>
     
+                    <p>       <img src="images/week7/rhino.JPG" width=80% height=auto>
+		<legend>Nesting using Rhino</legend> </p>
+    <p>The DXF is then imported into the shopbot vcarve software. This is the application where we generate the toolpaths for cutting.</p>
     
-    <h3>Text</h3>
-	<p>
-	You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltp&gt;
-	Your text here
-	&lt/p&gt;</pre>
-	</p>
-	Result:
-	<p>
-	Your text here
-	</p>
-	
-	<h3>Images</h3>
-	<p>
-	You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltp class="pic&gt;>&ltimg src="http://academy.cba.mit.edu/2012/students/menichinelli.massimo/exercise07/exercise07_02.jpg"&gt;
-	&ltlegend&gt;Here's the legend of the picture.&lt/legend&gt;
-	&lt/p&gt;</pre>
-	</p>
-	Result:
-	<p class="pic"><img src="http://academy.cba.mit.edu/2012/students/menichinelli.massimo/exercise07/exercise07_02.jpg">
-	<legend>Here's the legend of the picture.</legend>
-	</p>
-     
-	<h3>Code</h3>
-	<p>
-	You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltpre class="prettyprint linenums"&gt;
-	Your code here
-	&lt/pre&gt;</pre>
-	
-	Result:
-	<pre class="prettyprint linenums">
-	for i in members:
-		print ""
-		print "USER:",members[i]
-		print "Loading connections..."
-		followers = load_connections([i], "followers")
-		friends = load_connections([i], "friends")
+        <p>       <img src="images/week7/Capture.JPG" width=80% height=auto>
+        <legend>Tab placement using vcarve</legend> </p>
+    
+        <p>       <img src="images/week7/Capture2.JPG" width=80% height=auto>
+        <legend>Outer profile cutting sumulated view</legend> </p>
+    
+        <p>       <img src="images/week7/Capture3.JPG" width=80% height=auto>
+        <legend>Inside slot cutting using the pocket option </legend> </p>
+    
+    <p><iframe src="http://fab.cba.mit.edu/content/tools/shopbot/index.html" width=80% height= 300px></iframe>
+    <legend>A good tutorial for setting up the shopbot</legend></p>
+    
+    <p>First we need to place the object firmly to the workbench. A sacrificial layer is used, and its advisable to screw the work on to the sacrificial layer. After setting up the plywood (i used 12mm), we need to set the orgins. First we need to setup the X, and Y orgins. Its a good practice to move the head to the absolute orgin and then to move to the desired work orgins. Later we need setup the Z orgin using the provoded plate. Its a good practice to note down the X,Y orgins. I have used a engraving tool and a milling tool. And Z orgin need to be set after every tool change.</p>
+    <p>The engraving if the text is done first, and then the tool is changed to the 6mm bit, and then the holes, inner profiles and outer profiles are cut in order. </p>
 
-		# Add edges...
-		print "Building the graph..."
-
-		for f in followers:
-			for k in followers[f]:
-				graph.add_edge(k,f)
-	
-		for f in friends:
-			for k in friends[f]:
-				graph.add_edge(f,k)</pre>
-	</p>
-	
-	<h3>3D Model</h3>
-	<p>	
-	The model can be rotated and zoomed with the mouse/trackpad. You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltcanvas id="cv" width=640 height=480&gt;
-	It seems you are using an outdated browser that does not support canvas :-(
-	&lt/canvas&gt;
-	&ltscript type="text/javascript"&gt;
-		var canvas = document.getElementById('cv');
-		var viewer = new JSC3D.Viewer(canvas);
-		viewer.setParameter('SceneUrl','media/monkey.stl');
-		viewer.setParameter('ModelColor','#CAA618');
-		viewer.setParameter('BackgroundColor1','#E5D7BA');
-		viewer.setParameter('BackgroundColor2','#383840');
-		viewer.setParameter('RenderMode','flat');
-		viewer.setParameter('MipMapping','on');
-		viewer.setParameter('Definition','high');
-		viewer.setParameter('Renderer','webgl');
-		viewer.init();
-		viewer.update();
-	&lt/script&gt;</pre>
-	
-	You can set up the path to the 3D model (.stl/.obj) within this line:
-	<pre class="prettyprint linenums">
-	viewer.setParameter('SceneUrl','media/monkey.stl');</pre>
-	
-	Result:
-	<canvas id="cv" width=640 height=480>
-	It seems you are using an outdated browser that does not support canvas :-(
-	</canvas>
-	<script type="text/javascript">
-		var canvas = document.getElementById('cv');
-		var viewer = new JSC3D.Viewer(canvas);
-		viewer.setParameter('SceneUrl','media/monkey.stl');
-		viewer.setParameter('ModelColor','#CAA618');
-		viewer.setParameter('BackgroundColor1','#E5D7BA');
-		viewer.setParameter('BackgroundColor2','#383840');
-		viewer.setParameter('RenderMode','flat');
-		viewer.setParameter('MipMapping','on');
-		viewer.setParameter('Definition','high');
-		viewer.setParameter('Renderer','webgl');
-		viewer.init();
-		viewer.update();
-	</script> 
-    </p> 
     
-    <h3>Download</h3>
-	<p>
-	You can set up a button for files to be downloaded with:
-	<pre class="prettyprint linenums">
-	&lta href="#"&gt;
-	&ltbutton type="button" class="btn btn-primary btn-lg">Download the file&lt/button&gt;
-	&lt/a&gt;</pre>
-	</p>
-	
-	<p>
-	Result:
-	</p>
-	<p>
-	<a href="#">
-	<button type="button" class="btn btn-primary btn-lg">Download the file</button>
+                <p>       <img src="images/week7/cut1.jpg" width=60% height=auto>
+        <legend>The engraving of the text </legend> </p>    
+        
+                <p>       <img src="images/week7/cut2.jpg" width=60% height=auto>
+        <legend>The inner cuts </legend> </p>     
+        
+                <p>       <img src="images/week7/cut3.jpg" width=60% height=auto>
+        <legend>After the outer cuts </legend> </p> 
+        
+                <p>       <img src="images/week7/assy.jpg" width=60% height=auto>
+        <legend>After the assembly of the stand </legend> </p> 
+        
+        
+        <p>       <img src="images/week7/heroshot.jpg" width=60% height=auto>
+        <legend>With a laptop placed </legend> </p>    
+    
+        <p>       <img src="images/week7/jimwithstand.jpg" width=60% height=auto>
+        <legend>Its just a photo of me with the stand </legend> </p> 
+        
+        <h3>Conclusion</h3>
+        <p>I was able to design and make the stand as part of the assignment. I also got good knowledge on using the shopbot as part of the process. I was in a hurry for making the design, so many of the possoble design flaws were not evident at first. The main thing I should have considered is making the tolerances bit more loose, to aid in the assembly, but a little filing helped with that. Also later I thoought it would be a nice idea to incoperated few storage areas on the stand. Also the top plate could have been designed in such a way that it could also be inserted from front, for easy adjustment of height. This stand is made without using any fastners, and so could be assembled and dissambled with the help of a hammer/mallet. This too was a happening week, with the job done, and lots of plans,ideas pouring in for the the application of the new tools and technique learned.</p>
+        
+        <p>The orginal files created as part this week's assignment is available via the link below.</p>
+      <a href="images\week7\week7sw.7z">
+	<button type="button" class="btn btn-primary btn-lg">Download the files</button>
 	</a>
-	</p>
-      
-    <h3>Would you like to insert more style/elements?</h3>
-      <p>
-      Check the documentation of Bootstrap <a href="">here</a>.
-      </p>
+        <hr>  
+   
     <!-- End of your content -->
 
     </div> <!-- /container -->

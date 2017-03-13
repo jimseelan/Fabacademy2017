@@ -79,144 +79,242 @@
     <div class="container">
 
 	<!-- Insert your content here below! -->
-
-     <!-- WORK IN PROGRESS BANNER --> 
-    <p> <img src="images/inprogress.jpg">
-	<legend>This site is yet to be completed, please visit later.</legend>
-	</p>
-    <!-- WORK IN PROGRESS BANNER --> 
-
-     <h2>Exercise...</h1>
-    
-    <h3>Menu</h3>
-	<p>
-	You can edit it by changing the <em>exercises-menu.html</em> and <em>project-menu.html</em>. Do <strong>not</strong> add any &ltol&gt; or &ltul&gt;, leave the structure as it is.
-	</p>
-    
-    
-    <h3>Text</h3>
-	<p>
-	You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltp&gt;
-	Your text here
-	&lt/p&gt;</pre>
-	</p>
-	Result:
-	<p>
-	Your text here
-	</p>
-	
-	<h3>Images</h3>
-	<p>
-	You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltp class="pic&gt;>&ltimg src="http://academy.cba.mit.edu/2012/students/menichinelli.massimo/exercise07/exercise07_02.jpg"&gt;
-	&ltlegend&gt;Here's the legend of the picture.&lt/legend&gt;
-	&lt/p&gt;</pre>
-	</p>
-	Result:
-	<p class="pic"><img src="http://academy.cba.mit.edu/2012/students/menichinelli.massimo/exercise07/exercise07_02.jpg">
-	<legend>Here's the legend of the picture.</legend>
-	</p>
-     
-	<h3>Code</h3>
-	<p>
-	You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltpre class="prettyprint linenums"&gt;
-	Your code here
-	&lt/pre&gt;</pre>
-	
-	Result:
-	<pre class="prettyprint linenums">
-	for i in members:
-		print ""
-		print "USER:",members[i]
-		print "Loading connections..."
-		followers = load_connections([i], "followers")
-		friends = load_connections([i], "friends")
-
-		# Add edges...
-		print "Building the graph..."
-
-		for f in followers:
-			for k in followers[f]:
-				graph.add_edge(k,f)
-	
-		for f in friends:
-			for k in friends[f]:
-				graph.add_edge(f,k)</pre>
-	</p>
-	
-	<h3>3D Model</h3>
-	<p>	
-	The model can be rotated and zoomed with the mouse/trackpad. You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltcanvas id="cv" width=640 height=480&gt;
-	It seems you are using an outdated browser that does not support canvas :-(
-	&lt/canvas&gt;
-	&ltscript type="text/javascript"&gt;
-		var canvas = document.getElementById('cv');
-		var viewer = new JSC3D.Viewer(canvas);
-		viewer.setParameter('SceneUrl','media/monkey.stl');
-		viewer.setParameter('ModelColor','#CAA618');
-		viewer.setParameter('BackgroundColor1','#E5D7BA');
-		viewer.setParameter('BackgroundColor2','#383840');
-		viewer.setParameter('RenderMode','flat');
-		viewer.setParameter('MipMapping','on');
-		viewer.setParameter('Definition','high');
-		viewer.setParameter('Renderer','webgl');
-		viewer.init();
-		viewer.update();
-	&lt/script&gt;</pre>
-	
-	You can set up the path to the 3D model (.stl/.obj) within this line:
-	<pre class="prettyprint linenums">
-	viewer.setParameter('SceneUrl','media/monkey.stl');</pre>
-	
-	Result:
-	<canvas id="cv" width=640 height=480>
-	It seems you are using an outdated browser that does not support canvas :-(
-	</canvas>
-	<script type="text/javascript">
-		var canvas = document.getElementById('cv');
-		var viewer = new JSC3D.Viewer(canvas);
-		viewer.setParameter('SceneUrl','media/monkey.stl');
-		viewer.setParameter('ModelColor','#CAA618');
-		viewer.setParameter('BackgroundColor1','#E5D7BA');
-		viewer.setParameter('BackgroundColor2','#383840');
-		viewer.setParameter('RenderMode','flat');
-		viewer.setParameter('MipMapping','on');
-		viewer.setParameter('Definition','high');
-		viewer.setParameter('Renderer','webgl');
-		viewer.init();
-		viewer.update();
-	</script> 
-    </p> 
-    
-    <h3>Download</h3>
-	<p>
-	You can set up a button for files to be downloaded with:
-	<pre class="prettyprint linenums">
-	&lta href="#"&gt;
-	&ltbutton type="button" class="btn btn-primary btn-lg">Download the file&lt/button&gt;
-	&lt/a&gt;</pre>
-	</p>
-	
-	<p>
-	Result:
-	</p>
-	<p>
-	<a href="#">
-	<button type="button" class="btn btn-primary btn-lg">Download the file</button>
-	</a>
-	</p>
+<h1>3D Scanning and Printing</h1>
+        <p>This week we explored the world of 3D Scanning and 3D Printing. This weeks assignments included a group project in which we tested the design rules for the <a href="https://en.wikipedia.org/wiki/Ultimaker#Ultimaker_2">Ultimaker 2</a> in our lab. And then  we needed to design and 3D print an object (small, few cm) that could not be made subtractively, for which I made the <a href="https://sketchfab.com/models/911682028d784a199762d292f11cb514">fabpushy</a> and <a href= "https://sketchfab.com/models/f5e00554f3844fe9be21dfd55518afc7">fabloop</a>. On the 3D scanning part the assignment was to 3D scan an object and optionally to print it</p>
+        
+        <h2>3D Scanning</h2>
+        <p>I have started the week by downloading the different softwares for the scanning purpose. I had two approaches in mind; one is the photogrammetry way and the other is by using the kinect, available in our lab. So on the photogrammetry tools, I tried installing Autodesk Remake, Visual SFM, also I had SCAN3D on my android phone. Considering the fact that the photgrammetry tools uses photos, I also installed a video to image convertor virtualdub on my laptop and video 2 image app on my android phone. My idea is to shoot videos and then convert them as images so that I could get more images by converting the frames to images. On the kinect side, I installed the kinect SDK and also Reconstruct me, Skanect, KScan3D, Scene Capture. And on the mesh editing side I installed Autodesk mesh mixer, meshlab and Blender.</p>
+        
+        <p>I brushed up few basics by going through the <a href="http://academy.cba.mit.edu/classes/scanning_printing/index.html">links</a> discussed by Neil during his lecture and also few other reading material like <a href="https://en.wikipedia.org/wiki/3D_scanner">wikipedia</a> and the ebook by <a href="lmi3d.com/sites/default/files/EBOOK_A_Simple_Guide_To_3D.pdf">lmi3D</a> offers good understanding on the basic types. Also <a href="https://3dprint.com/138629/2016-3d-scanner-buying-guide/">this article</a> lists the wide range of scanners currently available.</p>
+        
+        <p>Mostly all 3D scanner employ Triangulation to determine the dimensions and geometry of
+real-world objects, i.e by understanding a limited set of angles and lengths of a triangle, mathematically we can figure out unknown values. Triangulation is used by both single camera, multiple camera (stereo-vision) devices, and also devices employing lasers etc. the distance and angles between imagers and the projected light source (laser or LED) creates a base of the triangle. The angle of the projected light returning to the imager from the surface completes a triangle where a 3D coordinate can be calculated. By applying this principle of solving triangles repetitively, a 3D representation of an object is created. </p>
+        <p>There are many types of 3D scanning technologies on the market today, from game controllers to industrially designed smart scanning devices. The most commonly used technologies fall into three categories: Displacement, Profile, and Snapshot (aka, Scanner).
+            <li>Displacement devices use a single point laser beam projection to measure the height, thickness, or position of an object.</li>
+            <li>Line Profile devices typically use a projected laser line to create a cross section profile for measuring aspects of an object’s contour. Moving an object under the laser line creates many profiles that can be combined into a complete 3D shape.</li>
+            <li>Snapshot devices use structured light (non-laser) and stereo-vision to generate full 3D volume data. Because Snapshot technology captures so much 3D data at one time, objects need to remain stationary during the scanning process.</li></p>
+        
+        
+        <h3>Kinect Sensor</h3>
+        <p><a href="www.xbox.com/en-US/xbox-360/accessories/kinect">Kinect</a> is orginally a motion sensing input device by Microsoft for Xbox 360 and Xbox One video game consoles. Based around a webcam-style add-on peripheral, it enables users to control and interact with their console/computer without the need for a game controller, through a natural user interface using gestures and spoken commands. Kinect also has a system consisting of an infrared projector and camera and a special microchip that generates a grid from which the location of a nearby object in 3 dimensions can be ascertained. This 3D scanner system called Light Coding employs a variant of image-based 3D reconstruction. In our lab we have a Kinect Sensor, that could be used as the scanner. An I have tried various softwares to gather and process the Kinect to reconstruct 3D models. To enable using Kinect on Windows for scanning purposes we need to first install the drivers. The easiest way is to do it one shot is to install the <a href="https://developer.microsoft.com/en-us/windows/kinect">Kinect SDK from Microsoft.</a></p>
+        
+        <h3>Kscan3D</h3>
+         <p>The first software I tried is the Kscan. <a href="http://www.kscan3d.com/">Kscan3D</a> is a Free to use program, which is the <a href="http://www.kscan3d.com/how-it-works/">Scanner</a> front End for the Kinect and similar sensors. We need to Capture data from multiple angles to create a complete 360 degree mesh. KScan3D can capture and align 3D meshes automatically. Once the data is captured, we can also use KScan3D to delete unneeded points, smooth data, etc. We can export final meshes in .fbx, .obj, .stl, .ply, and .asc formats from the Kscan software.</p>
+         <p>       <img src="images/week5/kscan1.JPG" width=80% height=auto>
+		<legend>Capturing the data from Kinect using Kscan3D</legend>     </p>  
+        <p>       <img src="images/week5/kscan2.JPG" width=80% height=auto>
+		<legend>Changing parameters on Printer settings</legend>     </p>
+        <p>       <img src="images/week5/kscan3.JPG" width=80% height=auto>
+		<legend>Changing parameters on Printer settings</legend>     </p>
+        <p>  We tried scanning each other using Kscan and Kinect. Kscan was able to get good resolution. We need to ensure that the the kinect is very still, else it may lose focus. Also we noticed that Kscan was not having the ability to make water tight models on its own, so we need to do some postprocessing in a mesh editing tool. And since the sensor can't me moved while scanning, the top view parts like the the top of head could not be captured as seen in the image above.</p>
+        <p>After using Kscan, I was not able to use the other 3D scanning softwares, A little investigation showed that Kscan will install its own version of the drivers for the Kinect, which is not compatible with the other 3D scanning softwares, so we need to unistall these drivers and have the orginal kinect driver installed by reinstalling the Kinect SDK.</p>
+        
+        
+        <h3>Skanect</h3>
+        <a href="http://skanect.occipital.com/">Skanect</a> by Occipital is one of the easiest and versatile tool I have tried for this assignment. To start the 3D scan, first we need to set the bounding box. Smaller box could give better solution, but we could think more like being in the focus of the sensor. 
+        
+        <p>       <img src="images/week5/skenectajith1.JPG" width=80% height=auto>
+		<legend>The bounding box, (screen shot taken after the first scan)</legend> </p>
+        
+        Then we need to Move slowly around the object until you have managed to capture all the data we want. The record button or spacebar could be used to start/stop recording. If the scan becomes misaligned, just need to line up the black and white image overlay with the physical data until it snaps back. Sometimes, we may  have to take multiple scans to get everything. In our scan, I was moving the camera around Ajith, which did not worked well. So we ended up rotating Ajith on a rotating chair keeping the Kinect stationary.
+        
+        <p>       <img src="images/week5/skenectajith2.JPG" width=80% height=auto>
+		<legend>Scanning in progress</legend> </p>
+        <p>       <img src="images/week5/skenectajith3.JPG" width=80% height=auto>
+		<legend>Scanning in progress</legend> </p>
+                
+        Once the capture is made all 360degrees, hit the “Stop” square to stop the recording, and move to the reconstruction and post processing phases, where we can fuse your scans together and add color andreconstruct.
+        
+        <p>       <img src="images/week5/skenectajith5.JPG" width=80% height=auto>
+		<legend>Scanned model after Reconstruction</legend> </p>        
+        <p>       <img src="images/week5/skenectajith6.JPG" width=80% height=auto>
+		<legend>After using the Colorize option</legend> </p>     
+        
+        <p><b>Small object Scanning</b> - I also tried doing a smaller object; the <a href="www.3dbenchy.com/">3DBenchy</a> which we used to test the printer settings. I tried to change multiple settings including the bounding box etc, but still I was not able to capture a good scan, i concluded that this is because if the part is placed beyond minimum distance required by the Kinect sensor, then the software is not able to reconstruct. </p>
+        
+        <p>       <img src="images/week5/Skanectboat.JPG" width=80% height=auto>
+		<legend>Trying to scan a <a href="www.3dbenchy.com/">small object</a> using Skanect</legend> </p>  
       
-    <h3>Would you like to insert more style/elements?</h3>
-      <p>
-      Check the documentation of Bootstrap <a href="">here</a>.
-      </p>
+        <p>As we were having only the trial version of Skanect, we were able to export the stl only with a coarse resolution. Then using mesh mixer, I have done a bit of sculpting on the back of the head to remove hole from the default skanect reconstruction. Then I uploaded to the sketchfab account I have created. </p>
+     
+        <p>       <img src="images/week5/meshmixerskanectedit1.JPG" width=60% height=auto>
+		<legend>Repairing the defect using meshmixer, Scultpt options</legend> </p>  
+        
+        <p>       <img src="images/week5/meshmixerskanectedit2.JPG" width=60% height=auto>
+		<legend>The updated model with the hole removed after sculpting in mesh mixer</legend> </p>          
+        
+             <div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/a61ee4c41ce3492896f1bf84c35129cf/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+
+<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A">
+    <a href="https://sketchfab.com/models/a61ee4c41ce3492896f1bf84c35129cf?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Skanect Scan</a>
+    by <a href="https://sketchfab.com/jimseelan?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">jimseelan</a>
+    on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+</p>
+</div>   
+        
+        <h3>SCENE Capture</h3>
+        <p>I also tried using Scene Capture from <a href="http://www.faro.com/en-in/products/3d-documentation/faro-scanner-freestyle-3d/software">Faro</a>, who is a market leader in professional quality 3D scanners. SCENE Capture is the application used by FARO to drive the FARO Freestyle3D sensors. In Addition, other 3D sensors including our humble Kinect are supported as well. The main task of SCENE Capture is the registration of single 3D frames to compose larger sceneries. Objects can be scanned from different sides by moving the sensor around the objects and rooms by panning and moving the sensor inside the rooms. Even though more information was captured using this tool, like multitude of points and their co-ordinates, colours etc, my humble laptop struggled a lot to cope up with the amount of data and the corresponding processing. At the end I was able to get say a million points which was exported as IGS and DXF files of the sizes of 500Mb files. Again solidworks struggled to open these files on my laptop so that I could do some editing work. So to conclude SCENE Capture is very powerful and precise for professional quality work, and need to use itonly with the right sensors and more importantly with a higher configuaration work station, and a lot of patience to remove the unwanted points and the corresponding postprocessing. But the point cloud data that we get could be used for professional grade 3D reconstruction.</p>
+              
+        <p>       <img src="images/week5/scenecapture4.JPG" width=80% height=auto>
+		<legend>Using Faro SCENE Capture.</legend> </p>   
+        
+        <h3>Reconstruct me</h3>
+        <p>This was the most easy to use 3D scanning software that I tried, and I really liked the selfie mode. And since this is one of the most used non-commercial application, there is lot of references available on how to do the scanning properly. It is easier to get good results if we try the steps mentioned on the <a href="http://reconstructme.net/qa_faqs/how-do-i-create-a-3d-selfie/">reconstructme website</a> and on <a href="http://www.instructables.com/id/3D-Scan-and-Print-Yourself-using-FREE-software/?ALLSTEPS">instrucatables.</a>. We sat on on a rotating chair, and kept the Kinect stationary. And after starting reconstruct me we roated ourselves by pushing the feet against the floor. This technique gave fairly accurate results. </p> 
+        
+        <p>       <img src="images/week5/reconstrcutmekinect1.JPG" width=60% height=auto>
+		<legend>The initial trials by moving Kinect, which was not successful.</legend> </p>   
+
+        <p>       <img src="images/week5/reconstrcutmekinect2.JPG" width=60% height=auto>
+		<legend>The screen showing a instance where the tracking is liost and we needed to do it again.</legend> </p>  
+        
+        <p>       <img src="images/week5/reconstrcutmekinect3.JPG" width=60% height=auto>
+		<legend>The inprogress screen of a eventually successful scan.</legend> </p>  
+        
+         <p>       <img src="images/week5/reconstructmeboatfailed.JPG" width=60% height=auto>
+             <legend>Another attempt to scan a <a href="www.3dbenchy.com/">small object</a>, this time using reconstructme but still not sucessful</legend> </p>  
+        
+        <div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/f9d77fbc841b41cb87303575e7641c84/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+
+<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;text-align: center">
+    <a href="https://sketchfab.com/models/f9d77fbc841b41cb87303575e7641c84?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Ajith @ fablab TVM</a>
+    by <a href="https://sketchfab.com/jimseelan?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">jimseelan</a>
+    on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+</p>
+</div>
+        <div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/4a63314c55014cdb86ac4a02b139a4b9/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+
+<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;text-align: center">
+    <a href="https://sketchfab.com/models/4a63314c55014cdb86ac4a02b139a4b9?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">3D scanned Jim</a>
+    by <a href="https://sketchfab.com/jimseelan?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">jimseelan</a>
+    on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+</p>
+</div>
+                
+        <h3>Visual SFM</h3>
+        <p>VisualSFM is a GUI application for 3D reconstruction using structure from motion (SFM).I tried to reconstruct the <a href="www.3dbenchy.com/">3D benchy model</a>, but was not successful. I took many photgrasphs at various orienations and tried to generate the model. I am yet to perfect my skills using this tool.</p>
+
+        <p>       <img src="images/week5/visualsfmtool.jpg" width=80% height=auto>
+		<legend>The workflow for using visualsfm</legend> </p>  
+        
+                <p>       <img src="images/week5/vsfmloadimages.JPG" width=80% height=auto>
+		<legend>Processing the images in visualsfm</legend> </p>  
+        
+                <p>       <img src="images/week5/vsfmloaddetectfeature.jpg" width=80% height=auto>
+		<legend>Detecting the features using visualsfm</legend> </p>  
+        
+        
+        <h3>Scan3D on Android</h3>
+        <p>Previosly I have used 123DCatch onmy Androidphone, the fact that the processing is done on the cloud was one aspect I did not like with respect to privacy. So later I found this toolcalled Scan3D on Android, that could do the processing on the phone itself. I have done few experiments, but the lighting and focusing are yet to be perfected for creating more perfect results.</p>
+        
+        <p>       <img src="images/week5/scan3d1.jpg" width=auto height="480">
+		<legend>The long processing time on my phone</legend> </p>  
+        
+        <p>       <img src="images/week5/scan3dfail.jpg" width=auto height="480">
+		<legend>The result I got 95% of my attempts</legend> </p>  
+        
+        <p>       <img src="images/week5/scan3dprocess.jpg" width=auto height="480">
+		<legend>One of the few semi successful attempts</legend> </p>  <hr>
+        
+                
+        <h2>3D Printing</h2>
+        <p>I had some prior exposure on 3D printing by buiding few DIY style printers with my collegues at work recently, so I could bit easily relate to the various terminologies and concepts in 3D printing. Also back in 2004, during my masters study I had used a now defunct Stratsys 3D printer, which almost entirely filled a small room at the <a href="https://www.annauniv.edu/aufrgicc/facility.html">AUFRG institute of CAD/CAM</a>, at Anna University.
+        So I was excited to try 3D printing on the <a href="https://en.wikipedia.org/wiki/Ultimaker#Ultimaker_2">Ultimaker 2</a> in our lab, which is a FDM type 3D printer. <br>After Neil's session on the subject I went through the <a href="http://www.stratasys.com/industries/education/educators/curriculum/downloads">stratsys learning content</a> on 3D printing. This is a well structred learning plan on 3D printing. <br>
+        The common3D printer technologies could be classified into <br>
+        <li>Fusible Deposition Modeling (FDM)</li>
+<li>Stereolithography and Digital Light Processing (SLA & DLP)</li>
+<li>Selective Laser Sintering (SLS)</li>
+<li>Material Jetting (PolyJet and MultiJet Modeling)</li>
+<li>Binder Jetting</li>
+<li>Metal Printing (Selective Laser Melting and Electron Beam Melting)</li><br>
+            
+        </p>
+        
+        
+        <h3>Group task - Testing the Design rules of 3D printer</h3>
+        <p>Understanding our 3D printers limits is the most important thing because this affects the printability and the print quality of the 3D prints. We did a group activity to understand the various parameters including resolution, maximum unsupported angle etc. We have downloaded a test print model from <a href="http://www.thingiverse.com/thing:1019228">thingiverse</a> and is shown below with the test parameters.</p>
+        
+        <li>size: the object is 2x50x30mm (baseplate)</li>
+        <li>hole size: 3 holes (3/4/5mm)</li>
+        <li>Nut size: M4 Nut should fit perfectly</li>
+        <li>fine details: pyramide, cone, all numbers</li>
+        <li>rounded print: wave, half sphere</li>
+        <li>minimum distance & walls: 0.1/0.2/0.3/0.4/0.5/0.6/0.7mm</li>
+        <li>overhang: 25°/30°/35°/40°/45°</li>
+        <li>bridge print: 2/4/8/16/mm</li>
+        <li>surface: all the flat parts</li>
+
+        <p>       <img src="images/week5/3dtestpart.jpg" width=80% height=auto>
+		<legend>The test print from <a href="http://www.thingiverse.com/thing:1019228">thingiverse</a></legend> </p> 
+                <p>       <img src="images/week5/testprint.jpg" width=80% height=auto>
+		<legend>The test prints made at our lab</a></legend> </p>  
+        
+        <p>The test results are visually the model looks fairly good, the slopes and curves are printed correctly, but we could notice some defects upon closure inspection, the lettering and the slots looked good. We tried to take some measurements using a vernier caliper. Since the part is so intricate, with rough surface finish and flexible overhangs, the measurement was difficult. We tried printing it in Red as well as Black color filaments, and the results where more or less similar.</p>
+        <p> <li>5mm circle -> 4.67 mm</li>
+            <li>4mm circle -> 3.7mm</li>
+            <li>3mm circle -> 2.6 mm</li>
+            <li>M4 Nut size visually looked ok </li>
+            <li>The smoothness of the pyramid, cone, sphere, and all numbers was good.</li>
+            <li>The minimum distance and walls of 0.1/0.2/0.3/0.4/0.5/0.6/0.7mm had minor defects. </li>
+            <li>The overhang print of 2/4/8/16/mm was ok. </li>
+            <li>Inclination of 25°/30°/35°/40°/45° had some defects, where the filament was dragged across the planes while printing. </li>
+            <li>All the flat parts were visually good.</p></li>
+
+<h4>Printing the 3DBenchy</h4>
+    <p>The <a href="http://www.3dbenchy.com">3DBenchy</a>is a 3D computer model specifically designed for testing the accuracy and capabilities of 3D printers. The 3DBenchy is described by its creator, as 'the jolly 3D printing torture-test'. Various resolution models including multipart models for color printing could be downloaded from the 3DBenchy website. The shape and size of this 3D model is designed to challenge 3D printers. The <a href="http://www.3dbenchy.com/dimensions/">dimensions</a> of the various features of this model could be easily measured with a caliper. </p>
+ 
+        <p>       <img src="images/week5/3dbenchydimensions.gif" width=60% height=auto>
+		<legend>The <a href="http://www.3dbenchy.com/dimensions/">dimensions</a> of the of the 3DBenchy</legend> </p>
+
+        <p>       <img src="images/week5/3dbenchy.jpg" width=80% height=auto>
+		<legend>The model 3DBenchyprinter using Ultimaker 2 in our lab</legend> </p>
+
+        
+        <h3>Design and Printing of fabpushy</h3>
+
+<div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/911682028d784a199762d292f11cb514/embed?autospin=0.2&amp;autostart=1" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+
+<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A; text-align: center">
+    <a href="https://sketchfab.com/models/911682028d784a199762d292f11cb514?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">fabpushy - push and go up and down</a>
+    by <a href="https://sketchfab.com/jimseelan?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">jimseelan</a>
+    on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+</p>
+</div>
+        <p>For the 3D printing assignment I used solidworks,  for modelling the parts. I wanted to create a moving mechanism by 3D printing. The process followed by me for creating creating for creating the model is illustrated in the following animation. When we roll the vehicle the middle wheel is supposed to rotate due friction. This in turn moves the slider crank assembly, which moves the ball head up and down.
+I exported the model as a STL file from solidworks. Later I am imported this file into cura. I used the low quality profile with layer height of 0.2 mm and a fill density of 10 %. I chose these settings for a quicker print. But these settings did not give good results, also the yellow material which I used was kept open for weeks and because of that the resulting print was too brittle. Also the reduced resolution fused certain layers preventing the relative motion. As a update the part could be printed with a higher resolution and higher fill density, and also could try reorienting parts and alighning the sidewalls to be the base layer.</p>
+
+        <p>       <img src="images/week5/swcreationyoyo.gif" width=60% height=auto>
+		<legend>The creation of the fabpushy model using solidworks</legend> </p>
+
+        <p>       <img src="images/week5/fabpushy.jpg" width=80% height=auto align=Center>
+		<legend>The fabpushy printed using the ultimaker 2 at our lab</legend> </p>
+        
+        <h3>Design and Printing of fabloop</h3>
+            
+<div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/f5e00554f3844fe9be21dfd55518afc7/embed?autospin=0.2&amp;autostart=1" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+
+<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A; text-align: center">
+    <a href="https://sketchfab.com/models/f5e00554f3844fe9be21dfd55518afc7?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">fabloop</a>
+    by <a href="https://sketchfab.com/jimseelan?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">jimseelan</a>
+    on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+</p>
+</div>
+    <p>I also modelled a infinite closed loop with movable tabs. This model was also done on solidworks. I used 3Dsketch throrough the filleted edges of a cube, and then sweeped a circle using the 3Dsketch as the path. Line contact is given between the tabs, so that the tabs could be easily separated after 3D printing. Using MeshMixer, I also generated the support, which looks very different and optimum than the mesh type sdefault support on Cura. Again for quicker printing I reduced the scale, and also fill density of 10% with a layer height of 0.2mm. And due to these factors and by using the yellow material, the output came bit delicate. I should also try printing this with abot 50% fill and 0.1m layer height.</p>
+     
+        <p>       <img src="images/week5/meshmixersupport.JPG" width=80% height=auto>
+		<legend>The support generated using MeshMixer</legend> </p>
+
+        <p>       <img src="images/week5/fabloop.jpg" width=80% height=auto align=Center>
+		<legend>The fabloop printed using the ultimaker 2 at our lab</legend> </p>
+
+       <hr>
+      
+      <p>The orginal Solidworks files for <a href="https://sketchfab.com/models/911682028d784a199762d292f11cb514">fabpushy</a> and <a href= "https://sketchfab.com/models/f5e00554f3844fe9be21dfd55518afc7">fabloop</a> created as part this week's assignment is available via the link below.</p>
+      <a href="images\week5\week5orginalfiles.zip">
+	<button type="button" class="btn btn-primary btn-lg">Download the files</button>
+	</a>
+        <hr>    
+      
+        
     <!-- End of your content -->
 
     </div> <!-- /container -->

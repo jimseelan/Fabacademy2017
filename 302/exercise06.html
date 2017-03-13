@@ -80,144 +80,156 @@
 
 	<!-- Insert your content here below! -->
 
-     <!-- WORK IN PROGRESS BANNER --> 
-    <p> <img src="images/inprogress.jpg">
-	<legend>This site is yet to be completed, please visit later.</legend>
-	</p>
-    <!-- WORK IN PROGRESS BANNER --> 
+   <h1>Electronics Design</h1> 
+                <p>       <img src="images/week6/helloworld.jpg" width=80% height=auto>
+        <p>This week I am going to learn something s\which I never thought that I could get to do, i.e to design and make a PCB all on my own. After Neils lecture, I started brushing up few basic electronics, and the common components. The next day, our local instructor Yadu gave a lecture on general electronics and after that our local instructor Vishnu gave a lecture on the usage of the EAGLE software suite. As usual I browsed the internet to find the various tools that could be used, and installed Virtual bread board, Fritzing, NI Mouser, KiCAD, and offcourse EAGLE, and later also tried few online tools like <a href="http://3dbrdviewer.cytec.bg/">3dbrdviewer</a>, <a href="https://easyeda.com/">easydba</a>, <a href="https://circuits.io/">circuits.io</a>, etc.</p>
+        
+        <p>This weeks assignment is to redraw the echo hello-world board, and to add (at least) a button and LED (with current-limiting resistor), and then to check the design rules. Finally we need to make it and and test it. Andfor extra credits we could try to simulate and measure its operation.</p>
+        
+        <h3>EAGLE</h3>
+        <p>EAGLE (Easily Applicable Graphical Layout Editor) is a flexible and expandable EDA(<a href="https://en.wikipedia.org/wiki/Electronic_design_automation">Electronic design automation</a>) schematic capture, PCB layout, autorouter and CAM program. EAGLE, which is currently owned by <a href="http://www.autodesk.com/education/free-software/eagle">Autodesk</a>, has a <a href="http://www.autodesk.com/education/free-software/eagle">free tier</a> and also has many component libraries on the web. We will use Eagle to layout and modify a circuit board for this assignment</p>
+        <p>After installing Eagle on my windows laptop, I downloaded the <a href="http://archive.fabacademy.org/archives/2017/doc/electronics/fab.lbr">fab.lbr</a>, the library of the parts in fablab inventory. Also as per Vishnu's suggestion I also downloaded and added the <a href="https://github.com/sparkfun/SparkFun-Eagle-Libraries">sparkfun</a> library too.</p>
+        <p>Firstly I created a project, and then a schematic on EAGLE. Later I identified and placed all the components, referring to the <a href="http://academy.cba.mit.edu/classes/embedded_programming/index.html#echo">hello-world</a>board details on the fab archive. After adding the parts, I located them to replicate Neil's layout and then did the wiring. Later I added one LED and a switch. I also did the board with this first design. Later I added two LEDs and a switch and re wired the board.</p>
+        
+                
+        <p>       <img src="images/week6/eagleaddparts.JPG" width=80% height=auto>
+		<legend>The parts are added one by one on a new Eagle Schematics </legend> </p> 
+        
+        <p>       <img src="images/week6/eagleschematics.JPG" width=80% height=auto>
+		<legend>The schematics created for the orginal hello fab board</legend> </p> 
+
+        <p>       <img src="images/week6/eagleratnextafter.JPG" width=80% height=auto>
+		<legend>The orginal hello fab board - my first efforts on component placements </legend> </p> 
+
+        <p>       <img src="images/week6/eagleschematicsfinal.JPG" width=80% height=auto>
+		<legend>The intermediate schematic created on EAGLE, with one LED and a switch</legend> </p> 
+
+        <p>       <img src="images/week6/designrulesoldgif.JPG" width=80% height=auto>
+		<legend>Updating the design rules to have 16mil (0.04 inch) instead of 8mil as the gaps</legend> </p>
+
+        <p>       <img src="images/week6/eaglesboardfinal.JPG" width=80% height=auto>
+		<legend>My version of the hello world board created using Eagle </legend> </p> 
+        
+        <p>       <img src="images/week6/eaglehellofabfinalsch.JPG" width=80% height=auto>
+		<legend>My final Eagle schematics created on EAGLE, with <b>two</b> LEDs and a switch </legend> </p> 
+        
+
+        <p>       <img src="images/week6/eagleexport.gif" width=150px height=auto>
+		<legend>The traces and the interior exported as png</legend> </p>
+
+    <h3>3Dbrdviewer</h3>
+        <p>I wanted to visualize the board I have made before milling it. I explored for different applications that could do this and finally stumbled upon <a href="http://3dbrdviewer.cytec.bg/board">3Dbrdviewer</a>, which a cool browser based app that could enable us to viewour board in 3D. This app has 3D models of lot of components and we could also create and add our own 3D component models. After checking out some samples, I opened the board I've previously created in EAGLE. The resistors, and LEDs came without a glith, the ISP was bit out of place, the other parts I manually added and also needed to move to the pads a bit. Finally I was able to visualize the board. Currently there is no option to explore the 3D model outside the browser.</p> 
+
+        <p>       <img src="images/week6/3dbrdviewer.gif" width=500px height=auto>
+		<legend>The board, components and assembly views</legend> </p>
+
+        <p>       <img src="images/week6/3dbrdbviewer4.JPG" width=80% height=auto>
+		<legend>The board visualized in 3Dbrdviewer</legend> </p>
+
+    
+
+        <h3>Fritzing</h3>        
+        <p>Fritzing is an open source initiative[2] to develop amateur or hobby CAD software for the design of electronics hardware, to support designers and artists ready to move from experimenting with a prototype to building a more permanent circuit. Its very easy to use and I tried creating simple circuits using breadboard, then a schematics and later a PCB  too.</p>    
+        
+        <p>       <img src="images/week6/fzbb.JPG" width=80% height=auto>
+		<legend>A simple layout on breadboard using fritzing</legend> </p>          
+        
+        <p>       <img src="images/week6/fzsch.JPG" width=80% height=auto>
+		<legend>A simple schematics created using fritzing</legend> </p>        
+        
+        <p>       <img src="images/week6/fzpcb.JPG" width=80% height=auto>
+		<legend>A simple PCB created using fritzing</legend> </p>          
+
+
+        <h3>Virtual Breadboard</h3>
+        <p>I have learned about VBB from the fab archive as like many other tools. VirtualBreadboard was designed as an emulator for Breadboard integrated circuits, being able to function as a development environment for microcontrollers, as well. Breadboard is a general term in electronics, referring more to the form of a circuit rather than its functionality, describing the construction base for electronics prototypes. The application’s range of uses varies from developing and debugging microcontrollers and emulating circuits to programming control panels for embedded applications and creating documentation for circuits. I installed VBB and explored the various features of it like component placing, wiring etc. I was not able to use the adruino emulator as the license was not available. But it could be a nice thing to have it tried.</p>
+
+        <p>       <img src="images/week6/virtualbreadboard.JPG" width=80% height=auto>
+		<legend>A simple circuit created on Virtual Bread Board Application</legend> </p>        
+                       
+                
+        
+        <h3>NI Multisim and Ultiboard</h3>
+        <p>NI Ultiboard or formerly ULTIboard is an electronic Printed Circuit Board Layout program which is part of a suite of circuit design programs, along with NI Multisim. One of its major features is the Real Time Design Rule Check, a feature that was only offered on expensive work stations in the days when it was introduced. I created a simple circuit in Multisim and did the simulation, and also created a sample board layout using Ultiboard.</p>        
+        
+        <p>       <img src="images/week6/mouserschematics.JPG" width=80% height=auto>
+		<legend>A simple schematic created using Multisim</legend> </p>  
+                
+        <p>       <img src="images/week6/mouserprobes.JPG" width=80% height=auto>
+		<legend>Probes added for simulation in Multisim</legend> </p>         
+        
+        <p>       <img src="images/week6/mouserrun1.JPG" width=80% height=auto>
+		<legend>Simulation run, with the switch open</legend> </p>        
+        
+        <p>       <img src="images/week6/mouserrun2.JPG" width=80% height=auto>
+		<legend>Simulation run, with the switch closed</legend> </p>           
+        
+        <p>       <img src="images/week6/mouserultiboard.JPG" width=80% height=auto>
+		<legend>Board layout using Ultiboard</legend> </p> 
+        
+        <p>       <img src="images/week6/mouserultiboardpcb.JPG" width=80% height=auto>
+		<legend>Wired PCB using Ultiboard</legend> </p>        
+        
+        <p>       <img src="images/week6/mousernetlist.JPG" width=80% height=auto>
+		<legend>Netlist from Ultiboard for the simple LED circuit made and simulated</legend> </p> 
         
         
-     <h2>Exercise...</h1>
-    
-    <h3>Menu</h3>
-	<p>
-	You can edit it by changing the <em>exercises-menu.html</em> and <em>project-menu.html</em>. Do <strong>not</strong> add any &ltol&gt; or &ltul&gt;, leave the structure as it is.
-	</p>
-    
-    
-    <h3>Text</h3>
-	<p>
-	You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltp&gt;
-	Your text here
-	&lt/p&gt;</pre>
-	</p>
-	Result:
-	<p>
-	Your text here
-	</p>
-	
-	<h3>Images</h3>
-	<p>
-	You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltp class="pic&gt;>&ltimg src="http://academy.cba.mit.edu/2012/students/menichinelli.massimo/exercise07/exercise07_02.jpg"&gt;
-	&ltlegend&gt;Here's the legend of the picture.&lt/legend&gt;
-	&lt/p&gt;</pre>
-	</p>
-	Result:
-	<p class="pic"><img src="http://academy.cba.mit.edu/2012/students/menichinelli.massimo/exercise07/exercise07_02.jpg">
-	<legend>Here's the legend of the picture.</legend>
-	</p>
-     
-	<h3>Code</h3>
-	<p>
-	You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltpre class="prettyprint linenums"&gt;
-	Your code here
-	&lt/pre&gt;</pre>
-	
-	Result:
-	<pre class="prettyprint linenums">
-	for i in members:
-		print ""
-		print "USER:",members[i]
-		print "Loading connections..."
-		followers = load_connections([i], "followers")
-		friends = load_connections([i], "friends")
+        
+        <h3>EasyEDA</h3>        
+        <p><a href="https://easyeda.com/">EasyEDA</a>, is a web-based EDA tool suite that enables hardware engineers to design, simulate, share - publicly and privately - and discuss schematics, simulations and printed circuit boards. Other features include the creation of a Bill of Materials, Gerber and pick and place files and documentary outputs in PDF, PNG and SVG formats. EasyEDA allows the creation and editing of schematic diagrams, SPICE simulation of mixed analogue and digital circuits and the creation and editing of printed circuit board layouts and, optionally, the manufacture of printed circuit boards. Subscription-free membership is offered for public plus a limited number of private projects. The number of private projects can be increased by contributing high quality public projects, schematic symbols, and PCB footprints and/or by paying a monthly subscription. I imported the schematics and board I created using Eagle and explored the various features of EasyEDA, and I really found that its really easy to use.</p>
+        
+        <p>       <img src="images/week6/easyedaschematic.JPG" width=80% height=auto>
+		<legend>Schematic on EasyEDA</legend> </p>         
+        
+        <p>       <img src="images/week6/easyedaboard.JPG" width=80% height=auto>
+		<legend>Schematic on EasyEDA</legend> </p>  
 
-		# Add edges...
-		print "Building the graph..."
-
-		for f in followers:
-			for k in followers[f]:
-				graph.add_edge(k,f)
-	
-		for f in friends:
-			for k in friends[f]:
-				graph.add_edge(f,k)</pre>
-	</p>
-	
-	<h3>3D Model</h3>
-	<p>	
-	The model can be rotated and zoomed with the mouse/trackpad. You can set it up with:
-	<pre class="prettyprint linenums">
-	&ltcanvas id="cv" width=640 height=480&gt;
-	It seems you are using an outdated browser that does not support canvas :-(
-	&lt/canvas&gt;
-	&ltscript type="text/javascript"&gt;
-		var canvas = document.getElementById('cv');
-		var viewer = new JSC3D.Viewer(canvas);
-		viewer.setParameter('SceneUrl','media/monkey.stl');
-		viewer.setParameter('ModelColor','#CAA618');
-		viewer.setParameter('BackgroundColor1','#E5D7BA');
-		viewer.setParameter('BackgroundColor2','#383840');
-		viewer.setParameter('RenderMode','flat');
-		viewer.setParameter('MipMapping','on');
-		viewer.setParameter('Definition','high');
-		viewer.setParameter('Renderer','webgl');
-		viewer.init();
-		viewer.update();
-	&lt/script&gt;</pre>
-	
-	You can set up the path to the 3D model (.stl/.obj) within this line:
-	<pre class="prettyprint linenums">
-	viewer.setParameter('SceneUrl','media/monkey.stl');</pre>
-	
-	Result:
-	<canvas id="cv" width=640 height=480>
-	It seems you are using an outdated browser that does not support canvas :-(
-	</canvas>
-	<script type="text/javascript">
-		var canvas = document.getElementById('cv');
-		var viewer = new JSC3D.Viewer(canvas);
-		viewer.setParameter('SceneUrl','media/monkey.stl');
-		viewer.setParameter('ModelColor','#CAA618');
-		viewer.setParameter('BackgroundColor1','#E5D7BA');
-		viewer.setParameter('BackgroundColor2','#383840');
-		viewer.setParameter('RenderMode','flat');
-		viewer.setParameter('MipMapping','on');
-		viewer.setParameter('Definition','high');
-		viewer.setParameter('Renderer','webgl');
-		viewer.init();
-		viewer.update();
-	</script> 
-    </p> 
+        <h3>KiCad</h3>
+        <p>KiCad is an open source software suite for Electronic Design Automation (EDA). The programs handle Schematic Capture, and PCB Layout with Gerber output. The suite runs on Windows, Linux and OS X. I understood that this could be possible alternate for EAGLE, and I would really like to try out KiCad very soon.</p>
+        
+        <h3>Making the board</h3>
+        <p>Then I milled the board, and then stuffed the parts as illustrated in the following images.</p>  
+        
+        <p>       <img src="images/week6/milling.jpg" width=80% height=auto>
+		<legend><a href="http://archive.fabacademy.org/archives/2017/fablabtrivandrum/students/312/exercise04.html">Milling</a> the board in Roland MDX-20</legend> </p>  
+        
+        <p>       <img src="images/week6/milledboard.jpg" width=80% height=auto>
+		<legend>The finished board after<a href="http://archive.fabacademy.org/archives/2017/fablabtrivandrum/students/312/exercise04.html">milling</a> in Roland MDX-20</legend> </p>  
+        <p>Then I soldered the parts starting with the IC, then the resonator, then the LEDs and Resistors and then the FTDI and finally the Resonator. I had the Eagle board drawing opened in front of me while soldering. I frequently used the view tool (the icon with an eye on the eagle software to highlight the traces, and zoom to find the corresponding traces.</p>  
+        
+        <p>       <img src="images/week6/finalboard.jpg" width=80% height=auto>
+		<legend>Finished board after soldering the components</legend> </p>  
+        
+        <h3>Testing and Programming the board</h3>
+        <p>Our Local instructor Vishnu guided me on the testing part. First I did a visual inspection of the soldered joints. Then continuity was checked using a multimeter. The continuity check enabled me to find a uncontacted solder onone of the ISP lead. </p> 
+        
+        <p>Then I did the <a href="http://academy.cba.mit.edu/classes/embedded_programming/index.html#echo">echo hello-world</a> program to see if the board works. The steps for programming are illustrated below.</p>
+        
+        <p><a href="http://academy.cba.mit.edu/classes/embedded_programming/hello.ftdi.44.program.png"> <img src="http://academy.cba.mit.edu/classes/embedded_programming/hello.ftdi.44.program.png" class="img-thumbnail" alt="from fab" width="304" height="236" </a><a></a></p>
+            
+        <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A; text-align: center">
+            <script type="text/javascript" src="https://asciinema.org/a/9ndtnsgof4uvmtrfkr7xsj772.js" id="asciicast-9ndtnsgof4uvmtrfkr7xsj772" async></script>  
+            <legend>Programming using the terminal</legend></p></br>
+            
+                          
+        <p>Instead of validating the code in python, I used <a href="https://github.com/neundorf/CuteCom/#readme">Cutecom</a>, which is a is a graphical serial terminal. And the results obtained as shown in the screenshot below, showed that the board is working ok. </p>
     
-    <h3>Download</h3>
-	<p>
-	You can set up a button for files to be downloaded with:
-	<pre class="prettyprint linenums">
-	&lta href="#"&gt;
-	&ltbutton type="button" class="btn btn-primary btn-lg">Download the file&lt/button&gt;
-	&lt/a&gt;</pre>
-	</p>
-	
-	<p>
-	Result:
-	</p>
-	<p>
-	<a href="#">
-	<button type="button" class="btn btn-primary btn-lg">Download the file</button>
+        <p>       <img src="images/week6/CuteCom_004.png" width=80% height=auto>
+		<legend>Checking the code with CuteCom</legend> </p>  
+        
+    
+        
+        <h3>Conclusion</h3>
+        <p>This week was very interesting in the sense, that I attempted to learn and do something which I did not tried at all before. I had a chance to evaluate few design tools, and my preference is to go with Fritzing, for the DIY like tasks, and Eagle for the fab activities. I would also want to try <a href="kicad-pcb.org/">kicad</a> as its an good opensourse alternate for Eagle. Also EasyEDA is another interesting EDA tool to look for wider acceptance in the near future. I also need to learn more about simulation, and need to do some more complex simulations than the one I have done this week. </p>
+        
+              <p>The orginal files created as part this week's assignment is available via the link below.</p>
+      <a href="images\week6\jimfabhello.zip">
+	<button type="button" class="btn btn-primary btn-lg">Download the files</button>
 	</a>
-	</p>
-      
-    <h3>Would you like to insert more style/elements?</h3>
-      <p>
-      Check the documentation of Bootstrap <a href="">here</a>.
-      </p>
+        <hr>  
+        
+
+        
     <!-- End of your content -->
 
     </div> <!-- /container -->
